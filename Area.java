@@ -1,35 +1,42 @@
-import java.util.*;
-class Area
+package GraphicS;
+
+import java.util.Scanner;
+interface figures
 {
-	void calculateArea(float x)
+	void rectangle();
+	void triangle();
+	void square();
+	void circle();
+}
+public class Area implements figures
+{
+	Scanner s=new Scanner(System.in);
+	public void rectangle()
 	{
-		System.out.println("Area of the square:"+x*x+" sq units");
+		System.out.println("Enter the length:");
+		int l=s.nextInt();
+		System.out.println("Enter the breadth:");
+		int b=s.nextInt();
+		System.out.println("Area of the rectangle:"+(l*b));
 	}
-	void calculateArea(float x,float y)
+	public void triangle()
 	{
-		System.out.println("Area of the rectangle:"+x*y+" sq units");
+		System.out.println("Enter the base:");
+		int base=s.nextInt();
+		System.out.println("Enter the height:");
+		int h=s.nextInt();
+		System.out.println("Area of the triangle:"+(0.5*base*h));
 	}
-	void calculateArea(double r)
+	public void square()
 	{
-		double area=3.14*r*r;
-		System.out.println("Area of the circle:"+area+" sq units");
+		System.out.println("Enter the side:");
+		int side=s.nextInt();
+		System.out.println("Area of the square:"+(side*side));
 	}
-	public static void main(String args[])
+	public void circle()
 	{
-		float s;
-		float l,b;
-		double r;
-		Area obj=new Area();
-		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter side of area:");
-		s=sc.nextFloat();
-		System.out.println("Enter length and breadth of a rectangle:");
-		l=sc.nextFloat();
-		b=sc.nextFloat();
-		System.out.println("Enter radius of the circle:");
-		r=sc.nextDouble();
-		obj.calculateArea(s);
-		obj.calculateArea(l,b);
-		obj.calculateArea(r);
+		System.out.println("Enter the radius:");
+		int r=s.nextInt();
+		System.out.println("Area of the Circle:"+(Math.PI*r*r));
 	}
 }
